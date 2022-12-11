@@ -26,4 +26,4 @@ npm run start</code></pre>
 
 # Ссылка на Netlify:
 
-https://animated-daifuku-633a5e.netlify.app/
+[https://animated-daifuku-633a5e.netlify.app/](https://curious-monstera-9fc34f.netlify.app)
