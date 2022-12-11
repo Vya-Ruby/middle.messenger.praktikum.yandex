@@ -16,28 +16,31 @@ items: [
 chat_content: {no_open: false}
 chat_array: [{
 date: "19 June", messages: [
-{type: "message",html: " <p> Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.</p><p>Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.</p>",date: "10:22",my: false},
-{type: "image",url: "test.png",date: "10:22",my: false},
-{type: "image",url: "screen1.png",date: "10:22",my: false},
+{type: "message",html: " <p> Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.</p><p>
+  Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.</p>",date: "10:22",my: false},
+{type: "image",url: "test.png",date: "10:22",my: false, alt: "Иконка компьютера"},
+{type: "image",url: "screen1.png",date: "10:22",my: false, alt: "фотоаппарат"},
 {type: "text",html: "Круто!",date: "10:33",my: true},]
 }]
 modal: {title: 'Add user', body: '<input type="text" class="input" placeholder="Login">', button: {type: 'button', text: 'Add'}}
 ---
 
-{{#extend "chat" links=array_links}}
+{{#extend "default/default" title="Чат с открытым функционалом"}}
   {{#content "main"}}
-    <div class="chat-list">
-      <div class="chat-list__profile">
-        <a href="#" class="chat-list__profile-link">Profile ></a>
-      </div>
-      <div class="chat-list__search-block">
-        <input type="text" class="chat-list__search-block__input" placeholder="Search">
-      </div>
-      <div class="chat-list__items scroll-y">
+    <main class="container-chat">
+      <div class="chat-list">
+        <div class="chat-list__profile">
+          <a href="#" class="chat-list__profile-link">Profile ></a>
+        </div>
+        <div class="chat-list__search-block">
+          <input type="text" class="chat-list__search-block__input" placeholder="Search">
+        </div>
+        <div class="chat-list__items scroll-y">
 
-        {{> 'chat/item' data=items chat_array=chat_array}}
+          {{> 'chat/item' data=items chat_array=chat_array}}
+        </div>
       </div>
-    </div>
-    {{> "chat/chat" data=chat_content}}
+      {{> "chat/chat" data=chat_content}}
+    </main>
   {{/content}}
 {{/extend}}

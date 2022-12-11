@@ -10,7 +10,6 @@
     padding: 0 30px;
     flex: 1 1 auto;
     input {
-      @extend %input;
       background: $primary_back_color;
       border: 0px;
       padding-left: 20px;

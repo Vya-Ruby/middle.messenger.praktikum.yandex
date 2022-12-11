@@ -1,0 +1,21 @@
+{{#each data}}
+  <div class="item">
+    <div class="item__avatar-container">
+      <div class="item__avatar-container__fake"></div>
+    </div>
+    <div class="item__dialog">
+      <div class="item__dialog-container">
+        <div class="dialog__name">{{this.name}}</div>
+        <div class="dialog__date">{{this.date}}</div>
+      </div>
+      <div class="item__dialog__preview-message">
+        {{#if this.my}}<span>You:</span>{{/if}} {{this.preview}}
+      </div>
+      {{#if this.unread}}
+        <div class="item__dialog__unread-container">
+          <span class="unread-count">{{this.unread}}</span>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+{{/each}}

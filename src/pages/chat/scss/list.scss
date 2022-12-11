@@ -22,7 +22,6 @@
     @extend %border-bottom;
 
     &__input {
-      @extend %input;
       background: rgba(0, 0, 0, 0.4);
       border: 0px;
     }

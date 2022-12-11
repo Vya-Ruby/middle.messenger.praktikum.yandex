@@ -1,0 +1,16 @@
+.form-element {
+  margin-bottom: 18px;
+
+  .form-element__title {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    margin-bottom: 11px;
+    display: block;
+  }
+
+  .form-element__error {
+    color: $red;
+  }
+}

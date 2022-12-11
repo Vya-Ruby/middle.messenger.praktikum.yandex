@@ -1,0 +1,39 @@
+---
+figures: ["circle", "square", "triangle"]
+login_input_elements: [
+{name: "first_name", title: "First name:", placeholder: "Enter first name", error: '', type: 'text'},
+{name: "second_name", title: "Secondary name:", placeholder: "Enter secondary name", error: '', type: 'text'},
+{name: "login", title: "Login:", placeholder: "Enter login", error: '', type: 'text'},
+{name: "email", title: "Email:", placeholder: "Enter email", error: '', type: 'text'},
+{name: "phone", title: "Phone:", placeholder: "Enter phone", error: '', type: 'phone'},
+{name: "password", title: "Password:", placeholder: "Enter password", error: '', type: 'password', icon: ''}
+]
+array_links: ['../../style/style.css', '../../partials/auth/figure.css']
+data_top-links: [
+{active: false, link: '/src/pages/auth/login/login.hbs', text: 'Login'},
+{active: true, link: '/src/pages/auth/register/register.hbs', text: 'Register'}
+]
+---
+{{#extend "default/default" title="Register"}}
+  {{#content "main"}}
+    <main class="container">
+      <div class="auth">
+        <div class="auth-form">
+          {{> "top-links/top-links" data=data_top-links}}
+          <form action="">
+            <div class="container-inputs">
+              {{> "form-element/form-element" data=login_input_elements}}
+            </div>
+            <div class="container-everything">
+              {{> "button/button" tyle="submit" text="Sign In"}}
+            </div>
+          </form>
+        </div>
+        <div class="auth__beautiful-elements register">
+          {{> "figures/figures" elements=figures}}
+          {{> "svg/star"}}
+        </div>
+      </div>
+    </main>
+  {{/content}}
+{{/extend}}

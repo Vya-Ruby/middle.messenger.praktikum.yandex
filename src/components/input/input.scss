@@ -1,0 +1,22 @@
+input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background: transparent;
+  padding: 7px;
+  color: #fff;
+  margin-bottom: 2px;
+  transition: all 0.3s ease-in;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    color: #9B9B9B;
+  }
+
+  &:focus, &:focus-visible {
+    border: 1px solid $primary-color;
+    outline: 1px solid $primary-color;
+  }
+}
