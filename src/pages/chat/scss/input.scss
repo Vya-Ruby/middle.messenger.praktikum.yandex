@@ -1,0 +1,42 @@
+.chat__input {
+  background: $more_back_color;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 20px;
+  align-items: center;
+  &__message {
+    padding: 0 30px;
+    flex: 1 1 auto;
+    input {
+      background: $primary_back_color;
+      border: 0px;
+      padding-left: 20px;
+    }
+  }
+  &__send {
+    button {
+      height: 39px;
+      color: #000;
+      background: #d9b3e6;
+      border-radius: 5px;
+      padding: 0 20px;
+      font-size: 23px;
+      cursor: pointer;
+      @extend %flex-center;
+    }
+  }
+}
+.chat__input {
+  position: relative;
+  &__window {
+    @extend %window;
+    bottom: 76px;
+    left: 10px;
+    li {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

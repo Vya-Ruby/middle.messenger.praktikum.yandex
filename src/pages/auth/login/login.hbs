@@ -1,0 +1,39 @@
+---
+figures: ["circle", "square", "triangle"]
+login_input_elements: [
+{name: "login", title: "Mailing address or login:", placeholder: "Enter email or login", error: '', type: 'text'},
+{name: "password", title: "Password:", placeholder: "Enter password", error: '', type: 'password', icon: ''}
+]
+array_links: ['../../../layouts', '../../partials/auth/figure.css']
+data_top-links: [
+{active: true, link: '/src/pages/auth/login/login.hbs', text: 'Login'},
+{active: false, link: '/src/pages/auth/register/register.hbs', text: 'Register'}
+]
+---
+
+{{#extend "default/default" title="Login"}}
+  {{#content "main"}}
+    <main class="container">
+      <div class="auth">
+        <div class="auth__beautiful-elements">
+          {{> "figures/figures" elements=figures}}
+          {{> "svg/star"}}
+        </div>
+        <div class="auth-form">
+          {{> "top-links/top-links" data=data_top-links}}
+          <form action="">
+            <div class="container-inputs">
+              {{> "form-element/form-element" data=login_input_elements}}
+            </div>
+            <div class="container-everything">
+              {{> "button/button" type="submit" text="Sign In"}}
+            </div>
+          </form>
+          <div class="text-center forgot">
+            <a href="#">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  {{/content}}
+{{/extend}}

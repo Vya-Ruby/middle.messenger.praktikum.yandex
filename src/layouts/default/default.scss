@@ -1,0 +1,85 @@
+@import "consts";
+@import "inheritances";
+
+@import "src/components/figures/figures";
+@import "src/components/input/input";
+@import "src/components/top-links/top-links";
+@import "src/components/button/button";
+@import "src/components/form-element/form-element";
+@import "src/components/modal/modal";
+
+
+@import "src/pages/auth/auth";
+@import "src/pages/chat/chat";
+@import "src/pages/errors/error";
+@import "src/pages/profile/profile";
+
+@font-face {
+  font-family: "Inter";
+  src: url(/static/fonts/Inter-Regular.ttf);
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+html {
+  height: 100%;
+}
+
+html::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+html .scroll-y::-webkit-scrollbar {
+  height: 0;
+  opacity: 0;
+  width: 0.375rem;
+}
+
+html .scroll-y:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  max-height: 12.5rem;
+  min-height: 5rem;
+  opacity: 1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #070613;
+  color: #fff;
+  height: 100%;
+  font-family: Inter, sans-serif;
+  letter-spacing: .5px;
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+  background: $primary_back_color;
+  @extend %flex-center;
+  &::before{
+    @extend %big__circle;
+    top: -25%;
+    left: -25%;
+  }
+}

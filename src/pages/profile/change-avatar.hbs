@@ -1,0 +1,44 @@
+---
+array_links: ['../../style/style.css']
+
+form_elements: [
+{name: "email", title: "Email:", type: 'text', value: 'pochta@yandex.ru'},
+{name: "login", title: "Login:", type: 'text', value: 'ivanivanov'},
+{name: "firstname", title: "First name:", type: 'text', value: 'ivan'},
+{name: "secondname", title: "Secondary name:", type: 'text', value: 'ivanov'},
+{name: "nickname", title: "Nickname:", type: 'text', value: 'ivan'},
+{name: "phone", title: "Phone:", type: 'text', value: '+7 (909) 967 30 30'},
+]
+modal: {title: 'Download the file', body: '
+<div class="text-center"><label class="input-file"><input type="file" name="avatar"><label>Выберите файл</label></label></div>', button: {type: 'submit', text: 'Change'}}
+data_top-links: [
+{active: true, link: '/src/pages/chat/chat.hbs', text: '⟵ Back'},
+{active: true, link: '#', text: 'Exit ⟶'}
+]
+---
+{{#extend "default/default" title="Change avatar"}}
+  {{#content "main"}}
+    <main class="container">
+      <div class="profile">
+        {{> "top-links/top-links" data=data_top-links}}
+        <div class="avatar-container">
+          <div class="img-container">
+            <div class="img-container__fake-avatar">
+              <i>{{> 'svg/photo'}}</i>
+            </div>
+          </div>
+        </div>
+        <div class="profile__info">
+          {{> 'form-element/form-element' data=form_elements}}
+          <div class="profile__info__btn">
+            {{> 'button/button' type="submit" text="Save"}}
+          </div>
+          <div class="text-center forgot">
+            <a href="#">Change password</a>
+          </div>
+        </div>
+        {{> "modal/modal" data=modal}}
+      </div>
+    </main>
+  {{/content}}
+{{/extend}}

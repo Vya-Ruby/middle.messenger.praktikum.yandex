@@ -1,0 +1,27 @@
+{
+  "name": "Yandex_Practicum_Sprint_1",
+  "engines": {
+    "node": "16.17.0"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel src/pages/home/index.hbs",
+    "start": "parcel build src/pages/home/index.hbs && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 2 versions",
+  "devDependencies": {
+    "-": "0.0.1",
+    "@anikin/parcel-transformer-handlebars": "1.0.9",
+    "@parcel/transformer-sass": "2.8.0",
+    "express": "4.18.2",
+    "parcel": "2.8.0",
+    "postcss": "8.4.19",
+    "postcss-import": "15.0.1",
+    "postcss-normalize": "10.0.1",
+    "precss": "4.0.0"
+  }
+}

@@ -1,0 +1,5 @@
+<div class="top__links">
+  {{#each data}}
+    <div class="link-item {{#if this.active}}active{{/if}}"><a href="{{this.link}}">{{this.text}}</a></div>
+  {{/each}}
+</div>

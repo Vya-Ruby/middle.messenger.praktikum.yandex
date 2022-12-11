@@ -1,0 +1,8 @@
+{{#each data}}
+  <div class="form-element">
+    <label class="form-element__title">{{this.title}}</label>
+    {{> "input/input" type=this.type value=this.value placeholder=this.placeholder name=this.name}}
+    {{#if this.icon}}<span class="form-element__icon"></span>{{/if}}
+    {{#if this.error}}<small class="form-element__error">{{this.error}}</small>{{/if}}
+  </div>
+{{/each}}

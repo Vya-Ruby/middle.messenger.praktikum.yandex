@@ -1,0 +1,41 @@
+---
+array_links: ['../../style/style.css']
+
+form_elements: [
+{name: "email", title: "Email:", type: 'text', value: 'pochta@yandex.ru'},
+{name: "login", title: "Login:", type: 'text', value: 'ivanivanov'},
+{name: "first_name", title: "First name:", type: 'text', value: 'ivan'},
+{name: "second_name", title: "Secondary name:", type: 'text', value: 'ivanov'},
+{name: "display_name", title: "Nickname:", type: 'text', value: 'ivan'},
+{name: "phone", title: "Phone:", type: 'text', value: '+7 (909) 967 30 30'},
+]
+data_top-links: [
+{active: true, link: '/src/pages/chat/chat.hbs', text: '⟵ Back'},
+{active: true, link: '#', text: 'Exit ⟶'}
+]
+---
+{{#extend "default/default" title="Profile"}}
+  {{#content "main"}}
+    <main class="container">
+      <div class="profile">
+        {{> "top-links/top-links" data=data_top-links}}
+        <div class="avatar-container">
+          <div class="img-container">
+            <div class="img-container__fake-avatar">
+              <i>{{> 'svg/photo'}}</i>
+            </div>
+          </div>
+        </div>
+        <div class="profile__info">
+          {{> 'form-element/form-element' data=form_elements}}
+          <div class="profile__info__btn">
+            {{> 'button/button' type="submit" text="Save"}}
+          </div>
+          <div class="text-center forgot">
+            <a href="#">Change password</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  {{/content}}
+{{/extend}}

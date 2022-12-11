@@ -1,0 +1,135 @@
+%border-bottom {
+  margin: 0 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+%avatar {
+  background: $primary-color;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+}
+
+%window {
+  position: absolute;
+  padding: 15px;
+  border-radius: 5px;
+  background: $more_back_color;
+  box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.25);
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  li {
+    cursor: pointer;
+    color: #fff;
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 15px;
+
+    i {
+      @extend %flex-center;
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      margin-right: 15px;
+    }
+
+    svg {
+      align-self: center;
+    }
+
+    &:last-child svg {
+      transform: rotate(45deg);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+%flex-center {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+
+%element__card {
+  padding: 18px 26px;
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+%big__circle {
+  width: 50%;
+  height: 100%;
+  content: "";
+  background: #171D59;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(300px);
+}
+
+%border-bottom {
+  margin: 0 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+%avatar {
+  background: $primary-color;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+}
+
+%window {
+  position: absolute;
+  padding: 15px;
+  border-radius: 5px;
+  background: $more_back_color;
+  box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.25);
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  li {
+    cursor: pointer;
+    color: #fff;
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 15px;
+
+    i {
+      @extend %flex-center;
+      display: inline-flex;
+      width: 22px;
+      height: 22px;
+      margin-right: 15px;
+    }
+
+    svg {
+      align-self: center;
+    }
+
+    &:last-child svg {
+      transform: rotate(45deg);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
