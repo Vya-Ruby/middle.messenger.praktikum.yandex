@@ -12,6 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "browserslist": "last 2 versions",
   "devDependencies": {
     "-": "0.0.1",
     "@anikin/parcel-transformer-handlebars": "1.0.9",
