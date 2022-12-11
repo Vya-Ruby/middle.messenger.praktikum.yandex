@@ -1,0 +1,44 @@
+---
+
+array_links: ['../../style/style.css']
+
+items: [
+{name: 'Андрей', date: '10:49', preview: 'Изображение', unread: 2, my: false},
+{name: 'Киноклуб', date: '12:00', preview: 'стикер', unread: 0, my: true},
+{name: 'Илья', date: 'Mon', preview: 'Друзья, у меня для вас особенный выпуск новостей!...', unread: 4, my: false},
+{name: 'Вадим', date: 'Mon', preview: 'Круто!', unread: 0, my: false},
+{name: 'тет-а-теты', date: 'Wed', preview: 'И Human Interface Guidelines и Material Design рекомендуют...', unread: 0, my: true},
+{name: '1,2,3', date: 'Thu', preview: 'Миллионы россиян ежедневно проводят десятки часов свое...', unread: 0, my: false},
+{name: 'Design Destroyer', date: 'Fri', preview: 'В 2008 году художник Jon Rafman  начал собирать...', unread: 0, my: false},
+{name: 'Day.', date: 'May 1, 2020', preview: 'Так увлёкся работой по курсу, что совсем забыл его анонсир...', unread: 0, my: false},
+{name: 'Стас Рогозин', date: Apr 12, 2020'', preview: 'Можно или сегодня или завтра вечером.', unread: 0, my: false},
+]
+chat_content: {no_open: true}
+chat_array: [{
+date: "19 June", messages: [
+{type: "message",html: " <p> Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.</p><p>Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.</p>",date: "10:22",my: false},
+{type: "image",url: "test.png",date: "10:22",my: false},
+{type: "image",url: "screen1.png",date: "10:22",my: false},
+{type: "text",html: "Круто!",date: "10:33",my: true},]
+}]
+modal: {title: 'Add user', body: '<input type="text" class="input" placeholder="Login">', button: {type: 'button', text: 'Add'}}
+---
+
+{{#extend "chat" links=array_links}}
+  {{#content "main"}}
+    <div class="chat-list">
+      <div class="chat-list__profile">
+        <a href="#" class="chat-list__profile-link">Profile ></a>
+      </div>
+      <div class="chat-list__search-block">
+        <input type="text" class="chat-list__search-block__input" placeholder="Search">
+      </div>
+      <div class="chat-list__items scroll-y">
+
+      {{> 'chat/item' data=items chat_array=chat_array}}
+      </div>
+    </div>
+      {{> "chat/chat" data=chat_content}}
+
+  {{/content}}
+{{/extend}}

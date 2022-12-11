@@ -1,0 +1,202 @@
+@import url("./consts.css");
+@import url("../pages/chat/chat.css");
+@import url("../pages/profile/profile.css");
+@import "../partials/modal/modal.scss";
+@import "../pages/error/error.css";
+
+@font-face {
+    font-family: "Inter";
+    src: url(../resources/fonts/Inter-Regular.ttf);
+}
+%flex-center {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+%element__card {
+    padding: 18px 26px;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.25);
+}
+%big__circle {
+    width: 50%;
+    height: 100%;
+    content: "";
+    background: #171D59;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(300px);
+
+}
+%input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    background: transparent;
+    padding: 7px;
+    color: #fff;
+    margin-bottom: 2px;
+    transition: all 0.3s ease-in;
+    &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        color: #9B9B9B;
+    }
+    &:focus, &:focus-visible {
+        border: 1px solid $primary-color;
+        outline: 1px solid $primary-color;
+    }
+}
+
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+html {
+    height: 100%;
+}
+
+html::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+html .scroll-y::-webkit-scrollbar {
+    height: 0;
+    opacity: 0;
+    width: 0.375rem;
+}
+html .scroll-y:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.2);
+    border-radius: 10px;
+    max-height: 12.5rem;
+    min-height: 5rem;
+    opacity: 1;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    background-color: #070613;
+    color: #fff;
+    height: 100%;
+    font-family: Inter, sans-serif;
+    letter-spacing: .5px;
+    overflow: hidden;
+
+}
+.container-auth {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+    background: $primary_back_color;
+    @extend %flex-center;
+    &::before{
+        @extend %big__circle;
+        top: -25%;
+        left: -25%;
+    }
+}
+
+.auth {
+    display: flex;
+    justify-content: center;
+    &__beautiful-elements {
+        &.register {
+            left: 150px;
+            top: 25%;
+        }
+        position: relative;
+        width: 310px;
+        &__element {
+            position: absolute;
+        }
+        @media screen and (max-width: 720px) {
+            display: none;
+        }
+    }
+}
+
+
+.auth-form__links {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px -25px 0;
+    top: -40px;
+    font-weight: 600;
+    .active {
+        position: relative;
+      &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          background: $primary-color;
+          height: 4px;
+          bottom: -7px;
+          border-radius: 5px;
+          box-shadow: 0px 1px 2px rgba(221, 153, 187, 0.4);
+      }
+    }
+    a {
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+.container-inputs {
+    margin-bottom: 50px;
+}
+.forgot {
+    text-align: center;
+    margin-top: 22px;
+    a {
+        color: $primary-color;
+        text-decoration: none;
+    }
+}
+
+.auth-form {
+    z-index: 1;
+    background: $more_back_color;
+    @extend %element__card;
+    padding: 18px 26px;
+    width: 310px;
+    &__button {
+        cursor: pointer;
+        font-weight: 600;
+        width: 100%;
+        background: #D9B3E6;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 2px;
+        padding: 10px 5px;
+        font-size: 16px;
+    }
+    &__form-elements {
+        margin-bottom: 18px;
+        .form-element__title {
+            font-style: normal;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            margin-bottom: 11px;
+        }
+        .form-element__input {
+            @extend %input;
+        }
+        .form-element__error {
+            color: #FF0000;
+        }
+    }
+}
+.text-center {
+    text-align: center!important;
+}

@@ -1,0 +1,35 @@
+---
+array_links: ['../../style/style.css']
+
+form_elements: [
+{name: "email", title: "Email:", type: 'text', value: 'pochta@yandex.ru'},
+{name: "login", title: "Login:", type: 'text', value: 'ivanivanov'},
+{name: "firstname", title: "First name:", type: 'text', value: 'ivan'},
+{name: "secondname", title: "Secondary name:", type: 'text', value: 'ivanov'},
+{name: "nickname", title: "Nickname:", type: 'text', value: 'ivan'},
+{name: "phone", title: "Phone:", type: 'text', value: '+7 (909) 967 30 30'},
+]
+---
+{{#extend "auth" links=array_links}}
+  {{#content "main"}}
+   <main class="profile">
+       {{> "profile/top-links"}}
+      <div class="avatar-container">
+        <div class="img-container">
+          <div class="img-container__fake-avatar">
+          <i>{{> 'svg/photo'}}</i>
+          </div>
+        </div>
+      </div>
+     <div class="profile__info">
+       {{> 'auth/input' data=form_elements}}
+       <div class="profile__info__btn">
+         {{> 'auth/button' type="submit" text="Save"}}
+       </div>
+       <div class="forgot">
+         <a href="#">Change password</a>
+       </div>
+     </div>
+   </main>
+  {{/content}}
+{{/extend}}

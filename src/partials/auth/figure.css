@@ -1,0 +1,102 @@
+
+%size_figure {
+  width: 70px;
+  height: 70px;
+}
+
+%circle {
+  border: 3px solid #DBFF00;
+  border-radius: 50%;
+}
+
+%triangle__content {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-left: 3px solid #24FF00;
+  border-top: 3px solid #24FF00;
+  border-bottom: 3px solid transparent;
+  bottom: -37px;
+  left: -1px;
+  transform: rotate(51deg)skew(19deg, 10deg);
+}
+
+.auth__beautiful-elements__element {
+  position: absolute;
+}
+
+.circle {
+  top: 100px;
+  right: 213px;
+  @extend %size_figure;
+  @extend %circle;
+
+  &::before {
+    @extend %size_figure;
+    @extend %circle;
+    content: "";
+    position: absolute;
+    filter: blur(25px);
+  }
+}
+
+.square {
+  @extend %size_figure;
+  border: 3px solid #FF0000;
+  top: 150px;
+  right: 115px;
+  transform: rotate(-15deg);
+
+  &::before {
+    @extend %size_figure;
+    border: 3px solid #FF0000;
+    content: "";
+    position: absolute;
+    filter: blur(25px);
+  }
+}
+
+.triangle {
+  top: 50px;
+  right: 115px;
+  transform: rotate(45deg);
+  width: 75px;
+  height: 17px;
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid #24FF00;
+
+  &, &::before {
+    border-right: 3px solid transparent
+  }
+
+  &::before {
+    @extend %triangle__content;
+  }
+
+  &::after {
+    @extend %triangle__content;
+    filter: blur(30px);
+  }
+}
+
+.star {
+  top: 200px;
+  right: 250px;
+  transform: rotate(45deg);
+  svg {
+    width: 80px;
+    height: 80px;
+    fill: #0500FF;
+  }
+  &::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    filter: blur(30px);
+    background: #0500FF;
+    position: absolute;
+    top: 25%;
+    left: 10px;
+  }
+}

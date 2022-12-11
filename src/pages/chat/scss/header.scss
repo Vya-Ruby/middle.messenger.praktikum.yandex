@@ -1,0 +1,50 @@
+.chat__header {
+  @extend %border-bottom;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $more_back_color;
+  margin: 0;
+  position: relative;
+
+  &__user-info {
+    display: flex;
+    margin-left: 20px;
+    .user-avatar {
+      @extend %avatar;
+      margin-right: 10px;
+    }
+    .user-name {
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+      align-self: center;
+    }
+  }
+}
+.more-action {
+  cursor: pointer;
+  margin-right: 20px;
+  width: 35px;
+  height: 33px;
+  border-radius: 50%;
+  @extend %flex-center;
+  align-items: center;
+
+  &.active {
+    background: $primary_back_color;
+
+  }
+  svg circle {
+    fill: $primary-color;
+  }
+  &__window {
+    @extend %window;
+    top: 80px;
+    right: 35px;
+    i {
+      border: 1px solid $primary-color;
+      border-radius: 50%;
+    }
+  }
+}
